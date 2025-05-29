@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "./v1";
+
+message CreateUserReq{
+   string Name = 1;
+   string Sex = 2;
+}
+
+message CreateUserRes{
+   int64  Code = 1;
+   string Msg = 2;
+}
+
+service User {
+  // "创建User"
+  rpc CreateUser(CreateUserReq) returns(CreateUserRes);
+}
