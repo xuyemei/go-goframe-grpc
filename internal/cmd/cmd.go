@@ -29,7 +29,7 @@ var (
 			g.Log().Info(ctx, "grpc server config:", c)
 			c.Options = append(c.Options, []grpc.ServerOption{
 				grpcx.Server.ChainUnary(
-				//grpcx.Server.UnaryValidate,
+					grpcx.Server.UnaryValidate,
 				)}...,
 			)
 			s := grpcx.Server.New(c)
